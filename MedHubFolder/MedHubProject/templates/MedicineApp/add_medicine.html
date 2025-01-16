@@ -1,0 +1,19 @@
+{% extends 'MedicineApp/layout.html' %}
+{% load static %}
+    {% block csslink %}
+    <link rel="stylesheet" href="{% static 'css/MedicineApp/add_medicine.css' %}">
+    {% endblock csslink%}
+    {% block title %}
+        <title>Add Medicine</title>
+    {% endblock title %}
+{% block content %}
+    {% load crispy_forms_tags %}
+    <h1 class="fw-bolder text-center mt-3 text-dark">Add Medicine</h1>
+    <div id="a1" class="container p-5 mt-4 card shadow" style="width:40%">
+    <form method="POST">
+        {% csrf_token %}
+        {{form|crispy}}
+        <input class="btn btn-primary" type="submit" value="Add Medicine">
+    </form>
+    </div>
+{% endblock content %}

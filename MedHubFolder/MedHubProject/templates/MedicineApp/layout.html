@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static 'css/MedicineApp/layout.css' %}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  {% block csslink %}
+  {% endblock csslink%}
+  {% block title %}
+  {% endblock title %}
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/medhub/home/"><img src="https://www.medhub.com/wp-content/uploads/2024/11/white-logo.webp" width="150px"></a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/medhub/home/">Home</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:white;">
+            Medicine
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/medhub/add-medicine/">Add Medicine</a></li>
+            <li><a class="dropdown-item" href="/medhub/search/">Search Medicine</a></li>
+            <li><a class="dropdown-item" href="/medhub/show-medicine/">Show All Medicine</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:white;">
+            Supplier
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Add Supplier</a></li>
+            <li><a class="dropdown-item" href="#">Update Supplier</a></li>
+            <li><a class="dropdown-item" href="#">Delete Supplier</a></li>
+            <li><a class="dropdown-item" href="#">Search Supplier</a></li>
+            <li><a class="dropdown-item" href="#">Show All Supplier</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">About Us</a>
+        </li>
+
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-warning me-5" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+  {% block content %}
+  {% endblock content %}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

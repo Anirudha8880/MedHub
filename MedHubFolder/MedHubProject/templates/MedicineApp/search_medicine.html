@@ -1,0 +1,44 @@
+{% extends 'MedicineApp/layout.html' %}
+{% load static %}
+
+{% block csslink %}
+    <link rel="stylesheet" href="{% static 'css/MedicineApp/search_medicine.css' %}">
+{% endblock csslink %}
+{% block title %}
+<title>Update Medicine</title>
+{% endblock title %}
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <div class="search">
+            <label>Medicine Name</label>
+            <input type="text" name="medicine_name">
+            <br><br>
+            <input class="btn btn-success" type="submit">
+        </div>
+    </form>
+    {% if med %}
+    <table class="table table-dark table-bordered mt-4 table-hover w-75 mx-auto text-center">
+        <tr>
+            <th>Medicine</th>
+            <th>Brand</th>
+            <th>Expiry Date</th>
+            <th>Quantity</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        <tr>
+            <td>{{med.medicine_name}}</td>
+            <td>{{med.manufacturer}}</td>
+            <td>{{med.exp}}</td>
+            <td>{{med.qty}}</td>
+            <td><a href="/medhub/update-medicine/{{medicine.id}}"><input class="btn btn-warning" type="submit" value="update"></a> </td>
+            <td><a href="/medhub/delete-medicine/{{medicine.id}}"><input class="btn btn-danger" type="submit" value="delete"></a></td>
+        </tr>
+    </table>
+{% else %}
+        <h1>{{msg}}</h1>
+    {% endif %}
+
+{% endblock content %}

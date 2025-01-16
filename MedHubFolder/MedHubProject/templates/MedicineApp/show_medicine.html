@@ -1,0 +1,32 @@
+{% extends 'MedicineApp/layout.html' %}
+{% load static %}
+    {% block csslink %}
+    <link rel="stylesheet" href="{% static 'css/MedicineApp/show_medicine.css' %}">
+    {% endblock csslink%}
+    {% block title %}
+        <title>Add Medicine</title>
+    {% endblock title %}
+{% block content %}
+    {% load crispy_forms_tags %}
+        <h1 class="fw-bolder text-center mt-3 text-danger">All Medicines</h1>
+        <table class="table table-dark table-bordered mt-4 table-hover w-75 mx-auto text-center">
+            <tr class="table-active">
+                <th>Medicine</th>
+                <th>Brand</th>
+                <th>Expiry Date</th>
+                <th>Quantity</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+            {% for medicine in med %}
+                <tr>
+                    <td>{{medicine.medicine_name}}</td>
+                    <td>{{medicine.manufacturer}}</td>
+                    <td>{{medicine.exp}}</td>
+                    <td>{{medicine.qty}}</td>
+                    <td><a href="/medhub/update-medicine/{{medicine.id}}"><input class="btn btn-warning" type="submit" value="update"></a> </td>
+                    <td><a href="/medhub/delete-medicine/{{medicine.id}}"><input class="btn btn-danger" type="submit" value="delete"></a></td>
+                </tr>
+            {% endfor %}
+        </table>
+{% endblock content %}

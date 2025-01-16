@@ -1,0 +1,21 @@
+body{
+    background-size:cover;
+    background-repeat : no-repeat;
+    background-image:url("/static/image/search_medicine.jpg")
+}
+.search{
+    text-align:center;
+    padding:5%;
+}
+.search label{
+    color:red;
+    font-size:150%;
+    margin-right:1%;
+    font-weight:bold;
+}
+.search input[type=text]{
+    border-radius:8px;
+    width:20%;
+    border-bottom:2px solid;
+
+}

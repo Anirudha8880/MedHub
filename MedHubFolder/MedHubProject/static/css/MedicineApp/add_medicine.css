@@ -1,0 +1,13 @@
+body{
+    background-position:center;
+    background-size:cover;
+    background-image:url("/static/image/add_medicine.jpg")
+
+}
+#a1{
+    background-color:transparent;
+    backdrop-filter:blur(8px);
+    font-size:18px;
+    color:black;
+    box-shadow:0 0 10px black;
+}
